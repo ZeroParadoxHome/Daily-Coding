@@ -1,0 +1,32 @@
+void main(List<String> args) {
+  int a = 23;
+  print(a);
+  String b = "Hello";
+  print(b);
+  double c = 19.999;
+  print(c);
+  bool d = false;
+  print(d);
+  num e = 85;
+  print(e);
+  var f = "XYZ";
+  print(f);
+  int g;
+  double h;
+  g = 75;
+  print(g);
+  h = 22.2;
+  print(h);
+  int i, j, k;
+  i = 1;
+  j = 2;
+  k = 3;
+  print(i + j + k);
+  double l, m;
+  l = 789.123;
+  m = 786.456;
+  print(l + m);
+  int? n;
+  print(n);
+  // print(n!);
+}
