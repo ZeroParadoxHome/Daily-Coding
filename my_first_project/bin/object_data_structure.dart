@@ -74,4 +74,54 @@ void main(List<String> args) {
   print(ac.isOdd);
   int ad = 1_000_000;
   print(ad);
+
+  num ae = 10;
+  num af = 2;
+  print(ae + af);
+  print(ae - af);
+  print(ae * af);
+  print(ae / af);
+  print(ae ~/ af);
+  print(ae % af);
+  ae++;
+  print(ae);
+  af--;
+  print(af);
+
+  print(ae > af);
+  print(ae < af);
+  print(ae >= af);
+  print(ae <= af);
+  print(ae != af);
+  print(ae == af);
+
+  print(ae += af);
+  print(ae -= af);
+  print(ae *= af);
+  print(ae /= af);
+  print(ae ~/= af);
+  print(ae %= af);
+
+  num ag = 3;
+  print(ag is int);
+  print(ag is! double);
+  print(ag is String);
+  num ah = 5.5;
+  print(ah is double);
+  var ai = ah is! int;
+  print(ai);
+
+  int aj = 10;
+  int ak = 25;
+  print((aj < ak) && (ak > 15));
+  print((aj < ak) || (ak > 30));
+  print(!(aj == ak));
+
+  int al = 10;
+  int am = 55;
+  print(al > 15 ? "al is greater than 15" : "al is less than or equal to 15");
+  print(am > 15 ? "am is greater than 15" : "am is less than or equal to 15");
+  var an;
+  num ao = 63;
+  print(an ?? ao);
 }
