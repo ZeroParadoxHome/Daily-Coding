@@ -165,4 +165,11 @@ void main(List<String> args) {
   String ax =
       "Ullamco\n aliquip\t elit\\ nisi\' ad\" irure\n non\t eu\\ ullamco\' magna\" pariatur.";
   print(ax);
+
+  bool ay = true;
+  print(ay);
+  bool az = false;
+  print(az);
+  bool aaa = 15 > 5;
+  print(aaa);
 }
