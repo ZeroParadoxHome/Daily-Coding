@@ -124,4 +124,45 @@ void main(List<String> args) {
   var an;
   num ao = 63;
   print(an ?? ao);
+
+  String ap = "I am learning Dart programming language";
+  print(ap);
+  String? aq;
+  print(aq);
+  // print(aq!);
+  String ar = "Dart is fun";
+  String as = "to learn";
+  print(ar + " " + as);
+  print("$ar $as");
+  print(("$ar " * 3) + as);
+  String at = "Ha ";
+  String au = at * 3;
+  print(au);
+  int av = 5;
+  print("Your age is about ${av * 3} years");
+  String aw =
+      "In dolore quis sunt consectetur eu velit quis ipsum esse enim laboris consectetur. ";
+  print(aw.isEmpty);
+  print(aw.isNotEmpty);
+  print(aw.length);
+  print(aw.toLowerCase());
+  print(aw.toUpperCase());
+  print(aw.trim());
+  print(
+    aw.replaceAll(
+      "consectetur.",
+      "Aliqua deserunt dolor voluptate irure commodo tempor ex fugiat duis.",
+    ),
+  );
+  print(aw.split(" "));
+  print(aw.substring(6, 15));
+  print(av.toString().runtimeType);
+  print(aw.contains("Lorem"));
+  print(aw.contains("ipsum"));
+  print(aw.startsWith("In"));
+  print(aw.endsWith("laboris"));
+  print(aw.indexOf("velit", 5));
+  String ax =
+      "Ullamco\n aliquip\t elit\\ nisi\' ad\" irure\n non\t eu\\ ullamco\' magna\" pariatur.";
+  print(ax);
 }
