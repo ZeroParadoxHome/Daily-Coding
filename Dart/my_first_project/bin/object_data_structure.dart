@@ -1,5 +1,3 @@
-import 'dart:vmservice_io';
-
 void main(List<String> args) {
   int a = 23;
   print(a);
@@ -297,4 +295,41 @@ void main(List<String> args) {
   print(set3.lookup(10));
   print(set3);
   print(aag.toSet());
+
+  var map1 = {"Name": "ZeroParadox", "Github": "ZeroParadoxHome"};
+  print(map1);
+  Map map2 = {1: 6, 2: 7, 3: 8, 4: 9, 5: 10};
+  print(map2);
+  Map<int, String> map3 = {1: "One", 2: "Two", 3: "Three"};
+  print(map3);
+  map3[4] = "Four";
+  map3[5] = "Five";
+  print(map3);
+  Map map4 = Map();
+  print(map4);
+  Map<int?, String> map6 = {null: "Earth", 2: "Venus", 3: "Sun"};
+  Map<int?, String?> map7 = {null: null};
+  Map<int?, String?>? map8;
+  print(map6);
+  print(map7);
+  print(map8);
+  print(map3.isEmpty);
+  print(map3.isNotEmpty);
+  print(map3.keys);
+  print(map3.values);
+  print(map3.length);
+  print(map3.containsKey(1));
+  print(map3.containsValue("Six"));
+  map3.remove(4);
+  print(map3);
+  map3.removeWhere((key, value) => value.startsWith("Five"));
+  print(map3);
+  Map map9 = {...map1, ...map2, ...map3};
+  // map9.addAll(map3);
+  print(map9);
+  map9.putIfAbsent(999, () => "Zzz");
+  List<int> numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+  List<String> letters = ["A", "B", "C", "D", "E", "F", "G", "H", "I"];
+  Map<int, String> map10 = Map<int, String>.fromIterables(numbers, letters);
+  print(map10);
 }
