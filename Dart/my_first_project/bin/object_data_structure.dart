@@ -1,3 +1,5 @@
+import 'dart:vmservice_io';
+
 void main(List<String> args) {
   int a = 23;
   print(a);
@@ -172,4 +174,99 @@ void main(List<String> args) {
   print(az);
   bool aaa = 15 > 5;
   print(aaa);
+
+  List aab = List.filled(5, 0);
+  print(aab);
+  List aac = List<int>.filled(6, 1);
+  print(aac);
+  List aad = List<String>.filled(7, "Dart");
+  print(aad);
+  aab[0] = 1;
+  print(aab);
+  List aae = [10, 20, 30, 40, 50];
+  List<String> aaf = ["Apple", "Banana", "Mango"];
+  print(aae);
+  print(aaf);
+  List<int> aag = [1, 2, 3, 4, 5, 6, 7, 8];
+  aag.add(9);
+  List<String> aah = ["A", "B", "C"];
+  print(aah);
+  List aai = List<int>.generate(3, (index) => index * index + index);
+  print(aai);
+  List aaj = List.generate(5, (index) => index + index % 2 == 0 ? 1 : 0);
+  print(aaj);
+  List aak = List.generate(
+    9,
+    (index) => index % 2 == 0 ? 1 : 0,
+    growable: false,
+  );
+  print(aak);
+  List aal = List.of(aaf);
+  aal.add("Carrot");
+  aal.add("lemon");
+  print(aal);
+  List aam = List.unmodifiable(
+    aaj,
+  ); // No change is allowed in indexes or adding a new value
+  print(aam);
+  List aan = List.from(<int>[333, 444, 555, 666, 777, 888, 999]);
+  aan.add(0);
+  print(aan);
+  List<String?> aao = ["one"];
+  List<String>? aap;
+  List<String?>? aaq = ["a", "b", null];
+  print(aao);
+  print(aap);
+  print(aaq);
+  List aar = [1];
+  List aas = ["Two"];
+  aar.add(aas);
+  print(aar);
+  aar.addAll([2, 3, 4, 5]);
+  print(aar);
+  aar.insert(0, 0);
+  aar.insertAll(0, [-2, -1]);
+  print(aar);
+  List aat = [10, 11, 12, 13, 14, 15, 16, 17];
+  bool aau = aat.remove(10);
+  print(aau);
+  print(aat);
+  var aav = aat.removeAt(5);
+  print(aav);
+  print(aat);
+  aat.removeLast();
+  print(aat);
+  aat.removeRange(0, 3);
+  print(aat);
+  print(aat.first);
+  print(aat.last);
+  print(aat.isEmpty);
+  print(aat.isNotEmpty);
+  print(aat.length);
+  print(aat.reversed);
+  // print(aat.single);
+  List aaw = [5, 10, 15, 20, 25, 30, 35, 40, 45, 50];
+  print(aaw.sublist(1, 7));
+  aaw.shuffle();
+  print(aaw);
+  List<String> aax = ["Soccer", "Swimming", "Tennis"];
+  Map<int, String> aay = aax.asMap();
+  print(aay);
+  List aaz = [1, "a", 2, "b", 3, "c"];
+  var qwerty = aaz.whereType<int>();
+  print(qwerty);
+  aag.replaceRange(1, 5, [100, 99, 98]);
+  print(aag);
+  print(aag.firstWhere((element) => element * element % 2 == 0));
+  var asdfg = aag.fold<int>(0, (i, j) => i + j);
+  print(asdfg);
+  var zxcvb = aag.reduce((i, j) => i - j);
+  print(zxcvb);
+  List aaaa = ["A", "a", "B", "b"];
+  var aaaaa = aaaa.followedBy(["C", "c"]).toList();
+  aaaaa.addAll(aaf);
+  print(aaaaa);
+  print(aaaaa.any((e) => e.contains("Apple")));
+  print(aaaaa.every((e) => e.startsWith("A")));
+  print(aaaaa.take(3));
 }
