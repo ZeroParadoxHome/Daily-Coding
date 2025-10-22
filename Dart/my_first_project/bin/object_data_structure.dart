@@ -269,4 +269,32 @@ void main(List<String> args) {
   print(aaaaa.any((e) => e.contains("Apple")));
   print(aaaaa.every((e) => e.startsWith("A")));
   print(aaaaa.take(3));
+
+  Set<String> set1 = {"Mohamad", "Amin", "Amir"};
+  print(set1);
+  Set<int> set2 = Set();
+  set2.add(1);
+  set2.add(2);
+  set2.add(3);
+  set2.add(3);
+  set2.add(3);
+  set2.addAll([4, 5, 6, 7, 8, 9, 10]);
+  print(set2);
+  // set2.clear();
+  Set set3 = {10, "Ten", 20, "Twenty", 30, "Thirty", 40, "Forty", 50, "Fifty"};
+  print(set3.first);
+  print(set3.last);
+  print(set3.isEmpty);
+  print(set3.isNotEmpty);
+  print(set3.length);
+  // print(set3.single);
+  print(set3.contains(60));
+  print(set3.contains([10, "Ten", 20, "Twenty", 30]));
+  print(set3.difference(set2));
+  print(set3.intersection(set2));
+  print(set3.lookup(10));
+  print(set3.remove(10));
+  print(set3.lookup(10));
+  print(set3);
+  print(aag.toSet());
 }
