@@ -332,4 +332,12 @@ void main(List<String> args) {
   List<String> letters = ["A", "B", "C", "D", "E", "F", "G", "H", "I"];
   Map<int, String> map10 = Map<int, String>.fromIterables(numbers, letters);
   print(map10);
+
+  final String final1 = "ZeroParadox";
+  print(final1);
+  final int final2;
+  final2 = 69;
+  print(final2);
+  const double const1 = 3.14;
+  print(const1);
 }
