@@ -117,4 +117,105 @@ void main() {
   } else {
     print("Number is out of range");
   }
+  String string1 = "A";
+  switch (string1) {
+    case "A+":
+      {
+        print("Excellent");
+      }
+    case "A":
+      {
+        print("Good");
+      }
+    case "B":
+      {
+        print("Not that bad");
+      }
+    case "C":
+      {
+        print("Need more try");
+      }
+    default:
+      {
+        print("An invalid choice");
+      }
+  }
+  int number9 = 6;
+  switch (number9) {
+    case 1:
+    case 2:
+    case 3:
+    case 4:
+    case 5:
+      print("Weekday");
+
+    case 6:
+    case 7:
+      print("Weekend");
+
+    default:
+      print("An invalid day");
+  }
+  String string2 = "Tiger";
+  switch (string2) {
+    case "Tiger":
+      print("It's a tiger");
+      continue alsoCat;
+
+    case "Zebra":
+      print("It's a zebra");
+
+    alsoCat:
+    case "Cat":
+      print("It's a cat");
+      break;
+
+    default:
+      print("Not an animal");
+  }
+  String string3 = "Friday";
+  int number10 = switch (string3) {
+    "Monday" => 1,
+    "Tuesday" => 2,
+    "Wednesday" => 3,
+    "Thursday" => 4,
+    "Friday" => 5,
+    "Saturday" => 6,
+    "Sunday" => 7,
+    _ => 0,
+  };
+  print(number10);
+  int number11 = 3;
+  String string4 = switch (number11) {
+    >= 1 && <= 5 => "Weekdays",
+    6 || 7 => "Weekend",
+    _ => "Date number is out of range",
+  };
+  print(string4);
+  String string5 = "ZeroParadox";
+  String string6 = "Home";
+  switch (string5) {
+    case "ZeroParadox" when string6 == "Home":
+      {
+        print("I am happy");
+      }
+    case "ZeroParadox" when string6 == "House":
+      {
+        print("I am sad");
+      }
+    case "ZeroParadoxHome":
+      {
+        print("ZeroParadoxHome");
+      }
+    default:
+      {
+        print("A mismatch expression");
+      }
+  }
+  String string7 = switch (string5) {
+    "ZeroParadox" when string6 == "Home" => "I am happy",
+    "ZeroParadox" when string6 == "House" => "I am sad",
+    _ => "A mismatch expression",
+  };
+  print(string7);
 }
