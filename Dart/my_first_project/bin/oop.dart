@@ -1,3 +1,5 @@
+import 'encapsulation.dart';
+
 class MyFirstClass {}
 
 class People {
@@ -249,6 +251,14 @@ class OrderProcessor {
   }
 }
 
+//* In Dart, being private is not limited to current file
+//! Being private is scoped to library level
+// class Car {
+//   int _speed;
+
+//   Car({required int speed}) : _speed = speed;
+// }
+
 void main() {
   People person1 = People();
   person1.name = "ZeroParadox";
@@ -346,4 +356,10 @@ void main() {
     ),
   );
   print(OrderManager.orders);
+  print(Order.totalCustomerCount);
+  Car bmw = Car(speed: 230);
+  bmw.setSpeed = 500;
+  print(bmw.getSpeed);
+  Employee employee1 = Employee(id: 1, name: "A John Doe", age: -1);
+  print("${employee1.getId} | ${employee1.getName} | ${employee1.getAge}");
 }
