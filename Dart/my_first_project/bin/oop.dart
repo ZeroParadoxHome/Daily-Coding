@@ -259,6 +259,76 @@ class OrderProcessor {
 //   Car({required int speed}) : _speed = speed;
 // }
 
+class Animal {
+  String color = "White";
+  String? breed;
+
+  void eat() {
+    print("Animal is eating");
+  }
+}
+
+class Dog extends Animal {
+  @override
+  // ignore: overridden_fields
+  String color = "Black";
+
+  @override
+  void eat() {
+    super.eat();
+    print("Dot is eating");
+  }
+
+  void bark() {
+    print("Dog is barking!");
+  }
+
+  @override
+  String toString() {
+    return color;
+  }
+}
+
+class AllTheCats {
+  AllTheCats({required String name}) {
+    print("$name is also a beautiful cat");
+  }
+
+  AllTheCats.types() {
+    print("A new species of animals");
+  }
+}
+
+class Cat extends AllTheCats {
+  String name;
+  Cat({required this.name}) : super(name: name) {
+    print("Your cat name is $name");
+  }
+}
+
+class Tiger extends AllTheCats {
+  late String name;
+  Tiger({required this.name}) : super(name: name) {
+    print("$name is a big tiger");
+  }
+
+  Tiger.info() : super.types() {
+    print("information about $name");
+  }
+}
+
+class Point {
+  final double x;
+  final double y;
+  late final double sum;
+
+  //* An initializer list
+  // ignore: prefer_initializing_formals
+  Point({required double x, required double y}) : x = x, y = y {
+    sum = x + y;
+  }
+}
+
 void main() {
   People person1 = People();
   person1.name = "ZeroParadox";
@@ -362,4 +432,10 @@ void main() {
   print(bmw.getSpeed);
   Employee employee1 = Employee(id: 1, name: "A John Doe", age: -1);
   print("${employee1.getId} | ${employee1.getName} | ${employee1.getAge}");
+  Dog rex = Dog();
+  rex.eat();
+  Cat jig = Cat(name: "Jig");
+  print(jig.name);
+  Point p = Point(x: 1.65, y: 3.35);
+  print(p.sum);
 }
