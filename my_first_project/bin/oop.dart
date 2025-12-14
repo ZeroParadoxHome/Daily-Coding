@@ -415,6 +415,87 @@ class Pigeons implements Animals {
 
 abstract interface class MyAbstractInterface {}
 
+/* More practice here */
+
+abstract class PublicTransportation {
+  void goForward();
+  void goBackward();
+  void goLeft();
+  void goRight();
+  void stop() {
+    print("Vehicle has stopped");
+  }
+}
+
+class Bus extends PublicTransportation {
+  @override
+  void goBackward() {
+    print("Bus starts to going forward");
+  }
+
+  @override
+  void goForward() {
+    print("Bus starts to going backward");
+  }
+
+  @override
+  void goLeft() {
+    print("Bus starts to going left side");
+  }
+
+  @override
+  void goRight() {
+    print("Bus starts to going right side");
+  }
+}
+
+interface class Notification {
+  void sendNewNotification() {
+    print("New message received");
+  }
+
+  void newEmailNotification() {
+    sendNewNotification();
+  }
+
+  void newSMSNotification() {
+    sendNewNotification();
+  }
+
+  void newPushNotification() {
+    sendNewNotification();
+  }
+}
+
+abstract interface class Payments {
+  void creditCard();
+  void cryptocurrency();
+  void payInPlace();
+  void needVerify() => "Verification is needed";
+  static const double fee = 1.5;
+  void applyFee({required num price}) {
+    price = price * Payments.fee;
+    print(price);
+  }
+}
+
+class PaymentRequest extends Payments {
+  @override
+  void creditCard() {
+    print("Customer wants to pay with credit card");
+  }
+
+  @override
+  void cryptocurrency() {
+    print("Customer wants to pay with cryptocurrency");
+  }
+
+  @override
+  void payInPlace() {
+    print("Customer wants to pay int the place");
+  }
+}
+
 void main() {
   People person1 = People();
   person1.name = "ZeroParadox";
@@ -528,4 +609,12 @@ void main() {
   rectangle.area();
   Triangle triangle = Triangle(height: 25, width: 15);
   triangle.area();
+  Bus bus = Bus();
+  bus.stop();
+  Notification notification = Notification();
+  notification.newPushNotification();
+  PaymentRequest payment = PaymentRequest();
+  payment.applyFee(price: 50_000);
+  payment.cryptocurrency();
+  payment.needVerify();
 }
