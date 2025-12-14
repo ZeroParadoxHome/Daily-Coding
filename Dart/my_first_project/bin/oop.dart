@@ -329,6 +329,92 @@ class Point {
   }
 }
 
+abstract class Vehicles {
+  int a = 0;
+
+  void startCar();
+  void stopCar();
+  void drive();
+
+  void buyCar() {
+    print("I buy your desired car");
+  }
+
+  void sellCar() {
+    print("I sell your desired car");
+  }
+}
+
+class MyCustomCar extends Vehicles {
+  @override
+  void drive() {
+    // TODO: implement drive
+  }
+
+  @override
+  void startCar() {
+    // TODO: implement startCar
+  }
+
+  @override
+  void stopCar() {
+    // TODO: implement stopCar
+  }
+}
+
+abstract class Shape {
+  late final int height;
+  late final int width;
+
+  void area();
+}
+
+class Rectangle extends Shape {
+  Rectangle({required int height, required int width}) {
+    this.height = height;
+    this.width = width;
+  }
+
+  @override
+  void area() {
+    print("Your rectangle area equals to ${height * width}");
+  }
+}
+
+class Triangle implements Shape {
+  @override
+  int height;
+
+  @override
+  int width;
+
+  Triangle({required this.height, required this.width});
+
+  @override
+  void area() {
+    print("Your triangle area equals to ${height * width * 0.5}");
+  }
+}
+
+interface class Animals {
+  // ignore: non_constant_identifier_names
+  void AnimalEat() {
+    print("Animals are eating");
+  }
+}
+
+class Zebra extends Animals {}
+
+class Pigeons implements Animals {
+  @override
+  // ignore: non_constant_identifier_names
+  void AnimalEat() {
+    print("Pigeons are eating");
+  }
+}
+
+abstract interface class MyAbstractInterface {}
+
 void main() {
   People person1 = People();
   person1.name = "ZeroParadox";
@@ -438,4 +524,8 @@ void main() {
   print(jig.name);
   Point p = Point(x: 1.65, y: 3.35);
   print(p.sum);
+  Rectangle rectangle = Rectangle(height: 5, width: 3);
+  rectangle.area();
+  Triangle triangle = Triangle(height: 25, width: 15);
+  triangle.area();
 }
