@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'encapsulation.dart';
 
 class MyFirstClass {}
@@ -496,6 +498,46 @@ class PaymentRequest extends Payments {
   }
 }
 
+abstract class Sea {
+  void swimForward();
+  void swumBackward();
+  void skeleton();
+}
+
+class Shark extends Sea {
+  @override
+  void swimForward() {
+    print("The shark is swimming forward");
+  }
+
+  @override
+  void swumBackward() {
+    print("The shark is swimming backward");
+  }
+
+  @override
+  void skeleton() {
+    print("The shark has a huge skeleton");
+  }
+}
+
+class Whale extends Sea {
+  @override
+  void swimForward() {
+    print("The whale is swimming forward");
+  }
+
+  @override
+  void swumBackward() {
+    print("The whale can swim toward the back side");
+  }
+
+  @override
+  void skeleton() {
+    print("The whale has the biggest skeleton");
+  }
+}
+
 void main() {
   People person1 = People();
   person1.name = "ZeroParadox";
@@ -617,4 +659,14 @@ void main() {
   payment.applyFee(price: 50_000);
   payment.cryptocurrency();
   payment.needVerify();
+  Shark jimmy = Shark();
+  Whale bob = Whale();
+  List<Sea> fishes = [jimmy, bob];
+  void inTheSea({required Sea breed}) {
+    breed.skeleton();
+  }
+
+  for (var fish in fishes) {
+    inTheSea(breed: fish);
+  }
 }
