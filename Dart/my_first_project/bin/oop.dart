@@ -538,6 +538,51 @@ class Whale extends Sea {
   }
 }
 
+mixin Swimming {
+  void swimming() {
+    print("Swimming...");
+  }
+}
+
+mixin Flying {
+  void flying() {
+    print("Flying...");
+  }
+}
+
+class Duck with Swimming, Flying {}
+
+class Fish with Swimming {}
+
+mixin Hunter on Animal {
+  void hunt() {
+    print("Hunting...");
+    eat();
+  }
+}
+
+class Cheetah extends Animal with Hunter {}
+
+abstract mixin class Musician {
+  void playInstrument({required String instrument});
+  void playPiano() => playInstrument(instrument: "Piano");
+  void playFlute() => playInstrument(instrument: "Flute");
+}
+
+class Virtuoso extends Musician {
+  @override
+  void playInstrument({required String instrument}) {
+    print("Plays $instrument beautifully");
+  }
+}
+
+class Novice with Musician {
+  @override
+  void playInstrument({required String instrument}) {
+    print("Plays $instrument poorly");
+  }
+}
+
 void main() {
   People person1 = People();
   person1.name = "ZeroParadox";
@@ -669,4 +714,15 @@ void main() {
   for (var fish in fishes) {
     inTheSea(breed: fish);
   }
+
+  Duck duck = Duck();
+  duck.swimming();
+  duck.flying();
+  Fish fish = Fish();
+  fish.swimming();
+  Cheetah cheetah = Cheetah();
+  cheetah.eat();
+  cheetah.hunt();
+  Virtuoso virtuoso = Virtuoso();
+  virtuoso.playInstrument(instrument: "Violone");
 }
