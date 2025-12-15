@@ -1,5 +1,3 @@
-import 'dart:async';
-
 import 'encapsulation.dart';
 
 class MyFirstClass {}
