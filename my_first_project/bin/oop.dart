@@ -610,6 +610,22 @@ class Variable<T> {
 num getAvgValue<T extends num>({required T number1, required T number2}) =>
     (number1 + number2) / 2;
 
+class TODO {
+  final String? who;
+  final String what;
+  final String? when;
+
+  const TODO({required this.what, this.who, this.when});
+}
+
+class FixMe {
+  final String author;
+  final String performer;
+  final String action;
+
+  FixMe({required this.author, required this.performer, required this.action});
+}
+
 void main() {
   People person1 = People();
   person1.name = "ZeroParadox";
@@ -762,4 +778,11 @@ void main() {
   print(variable2);
   print(variable3);
   print(getAvgValue<num>(number1: 1.5, number2: 3.25));
+  @TODO(
+    what: "Fix This part of the code",
+    who: "ZeroParadoxHome",
+    when: "By the end of today",
+  )
+  // ignore: unused_element
+  void todo() {}
 }
