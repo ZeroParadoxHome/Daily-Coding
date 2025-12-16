@@ -1,5 +1,3 @@
-import 'dart:async';
-
 import 'encapsulation.dart';
 
 class MyFirstClass {}
@@ -583,6 +581,35 @@ class Novice with Musician {
   }
 }
 
+abstract class Cache<T> {
+  T getByKey({required String key});
+  void setByKey({required String key, required T value});
+}
+
+class Foods<T, S, U> {
+  late T rice;
+  late S chicken;
+  U? pizza;
+}
+
+//* E for element type in a collection:
+class Iterables<E> {}
+
+//* K and V for the key and value types in an associative collection:
+class MapEntries<K, V> {}
+
+class Variable<T> {
+  T variable;
+  Variable({required this.variable});
+  @override
+  String toString() {
+    return "$variable";
+  }
+}
+
+num getAvgValue<T extends num>({required T number1, required T number2}) =>
+    (number1 + number2) / 2;
+
 void main() {
   People person1 = People();
   person1.name = "ZeroParadox";
@@ -725,4 +752,14 @@ void main() {
   cheetah.hunt();
   Virtuoso virtuoso = Virtuoso();
   virtuoso.playInstrument(instrument: "Violone");
+  Foods<String, String, String> food1 = Foods<String, String, String>();
+  food1.pizza = "Pepperoni";
+  print(food1.pizza!);
+  Variable<String> variable1 = Variable<String>(variable: "Variable");
+  Variable<num> variable2 = Variable<num>(variable: 1);
+  Variable<bool> variable3 = Variable<bool>(variable: false);
+  print(variable1);
+  print(variable2);
+  print(variable3);
+  print(getAvgValue<num>(number1: 1.5, number2: 3.25));
 }
