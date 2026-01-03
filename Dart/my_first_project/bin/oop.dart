@@ -626,6 +626,38 @@ class FixMe {
   FixMe({required this.author, required this.performer, required this.action});
 }
 
+extension ListAvgNumbers on List<num> {
+  num calculateAvgAmount<T extends num>() {
+    num avgNumber = 0;
+    for (num number in this) {
+      avgNumber += number;
+    }
+    return avgNumber / length;
+  }
+}
+
+extension ListSumNumbers on List<int> {
+  int calculateSumNumbers() {
+    int sumNumbers = 0;
+    for (int number in this) {
+      sumNumbers += number;
+    }
+    return sumNumbers;
+  }
+}
+
+extension ReturnPersianNumbers on String {
+  String get returnPersianNumbers {
+    const List<String> english = ["1", "2", "3", "4", "5", "6", "7", "8", "9"];
+    const List<String> persian = ["۱", "۲", "۳", "۴", "۵", "۶", "۷", "۸", "۹"];
+    String string = this;
+    for (int i = 0; i < english.length; i++) {
+      string = string.replaceAll(english[i], persian[i]);
+    }
+    return string;
+  }
+}
+
 void main() {
   People person1 = People();
   person1.name = "ZeroParadox";
@@ -785,4 +817,10 @@ void main() {
   )
   // ignore: unused_element
   void todo() {}
+  List<double> myAvgList = [1.23, 4.56, 7.89];
+  print(myAvgList.calculateAvgAmount());
+  List<int> mySumList = [1, 3, 5, 7, 9, 11, 13, 15];
+  mySumList.calculateSumNumbers();
+  String myPersianString = "123456789AaBbCc@";
+  print(myPersianString.returnPersianNumbers);
 }
