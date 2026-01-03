@@ -658,6 +658,36 @@ extension ReturnPersianNumbers on String {
   }
 }
 
+class Factory {
+  final String key;
+  Factory._internal({required this.key});
+  factory Factory({required String key}) {
+    return Factory._internal(key: key);
+  }
+}
+
+class Logger {
+  late final String key;
+  static final Map<String, Logger> _cache = {};
+
+  Logger._internal({required this.key});
+
+  factory Logger({required String key}) {
+    if (_cache.containsKey(key)) {
+      return _cache[key]!;
+    }
+    final Logger logger = Logger._internal(key: key);
+    _cache[key] = logger;
+    return logger;
+  }
+}
+
+class Singleton {
+  static final Singleton _instance = Singleton._internal();
+  Singleton._internal();
+  factory Singleton() => _instance;
+}
+
 void main() {
   People person1 = People();
   person1.name = "ZeroParadox";
@@ -823,4 +853,10 @@ void main() {
   mySumList.calculateSumNumbers();
   String myPersianString = "123456789AaBbCc@";
   print(myPersianString.returnPersianNumbers);
+  Singleton singleton1 = Singleton();
+  Singleton singleton2 = Singleton();
+  Singleton singleton3 = Singleton();
+  print(singleton1.hashCode);
+  print(singleton2.hashCode);
+  print(singleton3.hashCode);
 }
