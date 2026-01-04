@@ -688,6 +688,44 @@ class Singleton {
   factory Singleton() => _instance;
 }
 
+final colorCodeWheel1 = (0, 0, 0);
+(int, int, int) colorCodeWheel2 = (225, 225, 225);
+(int r, int g, int b) colorCodeWheel3 = (123, 122, 121);
+({int r, double g, String b}) mixedColorCode = (r: 69, g: 1.23, b: "5");
+final String finalColorCode =
+    "${mixedColorCode.r}, ${mixedColorCode.g}, ${mixedColorCode.b}";
+({int a, int b}) swapper({required ({int a, int b}) records}) {
+  var (a: a, b: b) = records;
+  return (a: b, b: a);
+}
+
+({int? min, int? max}) findMinMax({required List<int> listOfNumbers}) {
+  if (listOfNumbers.isEmpty) {
+    return (min: null, max: null);
+  }
+
+  int min = listOfNumbers[0];
+  int max = listOfNumbers[0];
+
+  for (int i in listOfNumbers) {
+    if (i < min) {
+      min = i;
+    }
+  }
+  for (int i in listOfNumbers) {
+    if (i > max) {
+      max = i;
+    }
+  }
+
+  return (min: min, max: max);
+}
+
+typedef UserDataFormat = ({String name, int age});
+UserDataFormat getUserData() {
+  return (name: "ZeroParadoxHome", age: 123);
+}
+
 void main() {
   People person1 = People();
   person1.name = "ZeroParadox";
@@ -859,4 +897,14 @@ void main() {
   print(singleton1.hashCode);
   print(singleton2.hashCode);
   print(singleton3.hashCode);
+  print(finalColorCode);
+  print(swapper(records: (a: 20, b: 30)));
+  final ({int? min, int? max}) getMinMax = findMinMax(
+    listOfNumbers: [5, 3, 7, 0, -1],
+  );
+  print(
+    "Minimum amount is ${getMinMax.min}, and maximum amount is ${getMinMax.max}",
+  );
+  var (:name, :age) = getUserData();
+  print("$name, $age");
 }
