@@ -276,7 +276,7 @@ class Dog extends Animal {
   @override
   void eat() {
     super.eat();
-    print("Dot is eating");
+    print("Dog is eating");
   }
 
   void bark() {
