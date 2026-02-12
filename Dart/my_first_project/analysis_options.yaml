@@ -17,9 +17,14 @@ include: package:lints/recommended.yaml
 
 linter:
   rules:
-    - camel_case_types
     - file_names
-    - avoid_relative_lib_imports
+    - camel_case_types
+    - always_specify_types
+    - always_declare_return_types
+    - always_put_required_named_parameters_first
+    - unawaited_futures
+    - discarded_futures
+    - annotate_overrides
 
 # analyzer:
 #   exclude:
