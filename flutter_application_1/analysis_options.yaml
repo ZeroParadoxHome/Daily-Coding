@@ -23,6 +23,14 @@ linter:
   rules:
     # avoid_print: false  # Uncomment to disable the `avoid_print` rule
     # prefer_single_quotes: true  # Uncomment to enable the `prefer_single_quotes` rule
+    - file_names
+    - camel_case_types
+    - always_specify_types
+    - always_declare_return_types
+    - always_put_required_named_parameters_first
+    - unawaited_futures
+    - discarded_futures
+    - annotate_overrides
 
 # Additional information about this file can be found at
 # https://dart.dev/guides/language/analysis-options
