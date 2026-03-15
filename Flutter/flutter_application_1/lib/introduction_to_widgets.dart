@@ -97,36 +97,39 @@ void main() => runApp(
                 overflow: .ellipsis,
                 textAlign: .justify,
                 style: TextStyle(
-                  color: Colors.purpleAccent,
+                  color: Colors.brown,
                   // backgroundColor: Colors.blueGrey,
                   background: Paint()
                     ..color = Colors.green
-                    ..strokeWidth = 20
+                    ..strokeWidth = 15
                     ..style = .stroke
                     ..strokeJoin = .round,
-                  fontSize: 25,
+                  fontSize: 30,
                   fontWeight: FontWeight(500),
                   fontStyle: .italic,
                   letterSpacing: 5,
                   wordSpacing: 7,
                   decoration: .lineThrough,
                   decorationColor: Colors.red,
-                  decorationThickness: 1.5,
+                  decorationThickness: 1.75,
                   decorationStyle: .wavy,
                   fontFeatures: <FontFeature>[FontFeature.liningFigures()],
                 ),
               ),
               RichText(
                 text: TextSpan(
-                  text: "1/2",
-                  style: TextStyle(
-                    fontFeatures: <FontFeature>[
-                      FontFeature.tabularFigures(),
-                      FontFeature.fractions(),
-                      FontFeature.enable("smcp"),
-                    ],
-                  ),
+                  style: TextStyle(color: Colors.black),
                   children: <TextSpan>[
+                    TextSpan(
+                      text: "1/2",
+                      style: TextStyle(
+                        fontFeatures: <FontFeature>[
+                          FontFeature.tabularFigures(),
+                          FontFeature.fractions(),
+                          FontFeature.enable("smcp"),
+                        ],
+                      ),
+                    ),
                     TextSpan(
                       text: " Cup of",
                       style: TextStyle(fontWeight: FontWeight.bold),
