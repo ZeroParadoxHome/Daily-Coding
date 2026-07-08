@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'dart:ui';
 
 void main() => runApp(
   MaterialApp(
@@ -22,7 +21,7 @@ void main() => runApp(
       drawer: MyDrawer(),
       bottomNavigationBar: MyNewBottomAppBar(),
       floatingActionButton: MyCustomFloatingActionButton(),
-      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+      floatingActionButtonLocation: .centerDocked,
       backgroundColor: Colors.white,
       resizeToAvoidBottomInset: false,
       drawerScrimColor: Colors.red,
@@ -89,6 +88,27 @@ void main() => runApp(
                 excludeFromSemantics: false,
                 isAntiAlias: true,
               ),
+              Image.network(
+                "https://avatars.githubusercontent.com/u/77263046?s=400&u=4cf24f55502a5da98f147d57030069bf6d521a79&v=4",
+                frameBuilder:
+                    (
+                      BuildContext context,
+                      Widget child,
+                      int? frame,
+                      bool? wasSynchronouslyLoaded,
+                    ) => Container(
+                      color: Colors.yellow,
+                      width: 350,
+                      height: 250,
+                      child: child,
+                    ),
+                matchTextDirection: true,
+                width: 250,
+                height: 250,
+                scale: 1.65,
+                repeat: .repeatX,
+                alignment: .center,
+              ),
               Text(
                 "Ullamco dolore aliqua consectetur ea ipsum culpa voluptate aliquip.",
                 textDirection: .ltr,
@@ -113,7 +133,7 @@ void main() => runApp(
                   decorationColor: Colors.red,
                   decorationThickness: 1.75,
                   decorationStyle: .wavy,
-                  fontFeatures: <FontFeature>[FontFeature.liningFigures()],
+                  fontFeatures: <FontFeature>[.liningFigures(), .slashedZero()],
                 ),
               ),
               RichText(
@@ -124,9 +144,9 @@ void main() => runApp(
                       text: "1/2",
                       style: TextStyle(
                         fontFeatures: <FontFeature>[
-                          FontFeature.tabularFigures(),
-                          FontFeature.fractions(),
-                          FontFeature.enable("smcp"),
+                          .tabularFigures(),
+                          .fractions(),
+                          .enable("smcp"),
                         ],
                       ),
                     ),
