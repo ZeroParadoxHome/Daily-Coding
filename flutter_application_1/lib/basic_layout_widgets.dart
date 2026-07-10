@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'pages/widgets/single_child_widgets/constrainedbox.dart';
 import 'pages/widgets/single_child_widgets/container.dart';
 
 void main(List<String> args) => runApp(const MyApp());
@@ -8,10 +9,16 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => MaterialApp(
+    // showSemanticsDebugger: true,
     home: Scaffold(
       body: SafeArea(
         child: Center(
-          child: Column(children: <Widget>[const MyCustomContainer()]),
+          child: Column(
+            children: <Widget>[
+              const MyCustomContainer(),
+              const MyConstrainedBox(),
+            ],
+          ),
         ),
       ),
     ),
