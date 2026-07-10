@@ -14,7 +14,7 @@ class MySizedBox extends StatelessWidget {
           child: Container(width: 999, height: 999, color: Colors.blue),
         ),
         // const SizedBox(height: 1),
-        Box(height: 1, color: Colors.purple),
+        Box(height: 5, color: Colors.purple),
         // Box.gap(.infinity),
         // SizedBox.expand(child: Container(color: Colors.pink)),
       ],
