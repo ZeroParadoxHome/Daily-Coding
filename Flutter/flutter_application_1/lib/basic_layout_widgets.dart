@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'pages/widgets/single_child_widgets/constrainedbox.dart';
 import 'pages/widgets/single_child_widgets/container.dart';
+import 'pages/widgets/single_child_widgets/sizedbox.dart';
 
 void main(List<String> args) => runApp(const MyApp());
 
@@ -17,6 +18,7 @@ class MyApp extends StatelessWidget {
             children: <Widget>[
               const MyCustomContainer(),
               const MyConstrainedBox(),
+              const MySizedBox(),
             ],
           ),
         ),
