@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'pages/widgets/single_child_widgets/boxdecoration.dart';
 import 'pages/widgets/single_child_widgets/constrainedbox.dart';
 import 'pages/widgets/single_child_widgets/container.dart';
 import 'pages/widgets/single_child_widgets/fractionallysizedbox.dart';
@@ -23,6 +24,7 @@ class MyApp extends StatelessWidget {
               const MySizedBox(),
               const MyCustomFractionallySizedBox(),
               const MyLimitedBox(),
+              const MyBoxDecoration(),
             ],
           ),
         ),
