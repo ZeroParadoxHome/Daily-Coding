@@ -1,11 +1,4 @@
-import 'package:flutter/material.dart';
-import 'pages/widgets/single_child_widgets/boxdecoration.dart';
-import 'pages/widgets/single_child_widgets/constrainedbox.dart';
-import 'pages/widgets/single_child_widgets/container.dart';
-import 'pages/widgets/single_child_widgets/fittedbox.dart';
-import 'pages/widgets/single_child_widgets/fractionallysizedbox.dart';
-import 'pages/widgets/single_child_widgets/limitedbox.dart';
-import 'pages/widgets/single_child_widgets/sizedbox.dart';
+import 'single_child_widgets_exports.dart';
 
 void main(List<String> args) => runApp(const MyApp());
 
