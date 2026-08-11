@@ -76,7 +76,10 @@ class _MyButtonWidgetsState extends State<MyButtonWidgets> {
           onPressed: () {},
           icon: const Icon(Icons.settings_rounded),
         ),
-        IconButton.outlined(onPressed: () {}, icon: const Icon(Icons.clear)),
+        IconButton.outlined(
+          onPressed: () {},
+          icon: const Icon(Icons.clear_rounded),
+        ),
         ElevatedButton(
           style: ElevatedButton.styleFrom(
             elevation: 9.0,
@@ -87,6 +90,11 @@ class _MyButtonWidgetsState extends State<MyButtonWidgets> {
           ),
           onPressed: () {},
           child: const Text("My Elevated Button"),
+        ),
+        ElevatedButton.icon(
+          icon: const Icon(Icons.celebration_rounded),
+          onPressed: () {},
+          label: const Text("Elevated Icon Button"),
         ),
       ],
     ),
